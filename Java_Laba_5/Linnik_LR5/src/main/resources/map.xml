@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="db.CharacteristicEntity" table="characteristic" schema="databasecourse">
+        <id name="idCharacteristic">
+            <column name="idCharacteristic" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="Name" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="section">
+            <column name="Section" sql-type="int(11)"/>
+        </property>
+    </class>
+    <class name="db.ClientcardEntity" table="clientcard" schema="databasecourse">
+        <id name="idClientCard">
+            <column name="idClientCard" sql-type="int(11)"/>
+        </id>
+        <property name="number">
+            <column name="Number" sql-type="int(11)"/>
+        </property>
+        <property name="firstName">
+            <column name="FirstName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="secondName">
+            <column name="SecondName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="thirdName">
+            <column name="ThirdName" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="phone">
+            <column name="Phone" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+    </class>
+    <class name="db.OrderEntity" table="order" schema="databasecourse">
+        <id name="idOrder">
+            <column name="idOrder" sql-type="int(11)"/>
+        </id>
+        <property name="numberOfOrder">
+            <column name="NumberOfOrder" sql-type="int(11)"/>
+        </property>
+        <property name="timeOfOrder">
+            <column name="TimeOfOrder" sql-type="datetime" not-null="true"/>
+        </property>
+        <many-to-one name="clientcardByClientCardIdClientCard" class="db.ClientcardEntity">
+            <column name="ClientCard_idClientCard"/>
+        </many-to-one>
+    </class>
+    <class name="db.PositionEntity" table="position" schema="databasecourse">
+        <id name="idPosition">
+            <column name="idPosition" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="Name" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="salary">
+            <column name="Salary" sql-type="double" precision="-1"/>
+        </property>
+    </class>
+    <class name="db.ProductEntity" table="product" schema="databasecourse">
+        <id name="idProduct">
+            <column name="idProduct" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="Name" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+    </class>
+    <class name="db.StaffEntity" table="staff" schema="databasecourse">
+        <id name="idStaff">
+            <column name="idStaff" sql-type="int(11)"/>
+        </id>
+        <property name="firstName">
+            <column name="FirstName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="secondName">
+            <column name="SecondName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="thirdName">
+            <column name="ThirdName" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="pasNumber">
+            <column name="PasNumber" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="birthDate">
+            <column name="BirthDate" sql-type="datetime"/>
+        </property>
+        <property name="experience">
+            <column name="Experience" sql-type="int(11)"/>
+        </property>
+        <many-to-one name="positionByPositionIdPosition" class="db.PositionEntity">
+            <column name="Position_idPosition"/>
+        </many-to-one>
+    </class>
+    <class name="db.TradeareaEntity" table="tradearea" schema="databasecourse">
+        <id name="idTradeArea">
+            <column name="idTradeArea" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="Name" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="hall">
+            <column name="Hall" sql-type="int(11)"/>
+        </property>
+        <many-to-one name="staffByStaffId" class="db.StaffEntity">
+            <column name="Staff_id"/>
+        </many-to-one>
+    </class>
+    <class name="db.TypeofpointEntity" table="typeofpoint" schema="databasecourse">
+        <id name="idTypeOfPoint">
+            <column name="idTypeOfPoint" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="Name" sql-type="varchar(45)" length="45"/>
+        </property>
+        <many-to-one name="characteristicByCharacteristicId" class="db.CharacteristicEntity">
+            <column name=" Characteristic_id"/>
+        </many-to-one>
+    </class>
+    <class name="db.BigsalaryEntity" table="bigsalary" schema="databasecourse">
+        <id name="idPosition">
+            <column name="idPosition" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="Name" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="salary">
+            <column name="Salary" sql-type="double" precision="-1"/>
+        </property>
+    </class>
+    <class name="db.BigshopEntity" table="bigshop" schema="databasecourse">
+        <id name="idTradeArea">
+            <column name="idTradeArea" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="Name" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="hall">
+            <column name="Hall" sql-type="int(11)"/>
+        </property>
+        <property name="typeOfPointId">
+            <column name="TypeOfPoint_id" sql-type="int(11)"/>
+        </property>
+        <property name="staffId">
+            <column name="Staff_id" sql-type="int(11)"/>
+        </property>
+    </class>
+    <class name="db.ContactclientEntity" table="contactclient" schema="databasecourse">
+        <id name="idClientCard">
+            <column name="idClientCard" sql-type="int(11)"/>
+        </id>
+        <property name="number">
+            <column name="Number" sql-type="int(11)"/>
+        </property>
+        <property name="firstName">
+            <column name="FirstName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="secondName">
+            <column name="SecondName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="thirdName">
+            <column name="ThirdName" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="phone">
+            <column name="Phone" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+    </class>
+    <class name="db.OldstaffEntity" table="oldstaff" schema="databasecourse">
+        <id name="idStaff">
+            <column name="idStaff" sql-type="int(11)"/>
+        </id>
+        <property name="firstName">
+            <column name="FirstName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="secondName">
+            <column name="SecondName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="thirdName">
+            <column name="ThirdName" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="pasNumber">
+            <column name="PasNumber" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="birthDate">
+            <column name="BirthDate" sql-type="datetime"/>
+        </property>
+        <property name="experience">
+            <column name="Experience" sql-type="int(11)"/>
+        </property>
+        <property name="positionIdPosition">
+            <column name="Position_idPosition" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>

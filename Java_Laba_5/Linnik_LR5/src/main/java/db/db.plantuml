@@ -1,0 +1,311 @@
+@startuml
+
+title __DB's Class Diagram__\n
+
+
+    namespace b {
+      class db.BigsalaryEntity {
+          - idPosition : int
+          - name : String
+          - salary : double
+          + equals()
+          + getIdPosition()
+          + getName()
+          + getSalary()
+          + hashCode()
+          + setIdPosition()
+          + setName()
+          + setSalary()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.BigshopEntity {
+          - hall : int
+          - idTradeArea : int
+          - name : String
+          - staffId : int
+          - typeOfPointId : int
+          + equals()
+          + getHall()
+          + getIdTradeArea()
+          + getName()
+          + getStaffId()
+          + getTypeOfPointId()
+          + hashCode()
+          + setHall()
+          + setIdTradeArea()
+          + setName()
+          + setStaffId()
+          + setTypeOfPointId()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.CharacteristicEntity {
+          - idCharacteristic : int
+          - name : String
+          - section : int
+          + equals()
+          + getIdCharacteristic()
+          + getName()
+          + getSection()
+          + hashCode()
+          + setIdCharacteristic()
+          + setName()
+          + setSection()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.ClientcardEntity {
+          - firstName : String
+          - idClientCard : int
+          - number : int
+          - phone : String
+          - secondName : String
+          - thirdName : String
+          + equals()
+          + getFirstName()
+          + getIdClientCard()
+          + getNumber()
+          + getPhone()
+          + getSecondName()
+          + getThirdName()
+          + hashCode()
+          + setFirstName()
+          + setIdClientCard()
+          + setNumber()
+          + setPhone()
+          + setSecondName()
+          + setThirdName()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.ContactclientEntity {
+          - firstName : String
+          - idClientCard : int
+          - number : int
+          - phone : String
+          - secondName : String
+          - thirdName : String
+          + equals()
+          + getFirstName()
+          + getIdClientCard()
+          + getNumber()
+          + getPhone()
+          + getSecondName()
+          + getThirdName()
+          + hashCode()
+          + setFirstName()
+          + setIdClientCard()
+          + setNumber()
+          + setPhone()
+          + setSecondName()
+          + setThirdName()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.OldstaffEntity {
+          - birthDate : Timestamp
+          - experience : int
+          - firstName : String
+          - idStaff : int
+          - pasNumber : String
+          - positionIdPosition : int
+          - secondName : String
+          - thirdName : String
+          + equals()
+          + getBirthDate()
+          + getExperience()
+          + getFirstName()
+          + getIdStaff()
+          + getPasNumber()
+          + getPositionIdPosition()
+          + getSecondName()
+          + getThirdName()
+          + hashCode()
+          + setBirthDate()
+          + setExperience()
+          + setFirstName()
+          + setIdStaff()
+          + setPasNumber()
+          + setPositionIdPosition()
+          + setSecondName()
+          + setThirdName()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.OrderEntity {
+          - idOrder : int
+          - numberOfOrder : int
+          - timeOfOrder : Timestamp
+          + equals()
+          + getClientcardByClientCardIdClientCard()
+          + getIdOrder()
+          + getNumberOfOrder()
+          + getTimeOfOrder()
+          + hashCode()
+          + setClientcardByClientCardIdClientCard()
+          + setIdOrder()
+          + setNumberOfOrder()
+          + setTimeOfOrder()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.PositionEntity {
+          - idPosition : int
+          - name : String
+          - salary : double
+          + equals()
+          + getIdPosition()
+          + getName()
+          + getSalary()
+          + hashCode()
+          + setIdPosition()
+          + setName()
+          + setSalary()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.ProductEntity {
+          - idProduct : int
+          - name : String
+          + equals()
+          + getIdProduct()
+          + getName()
+          + hashCode()
+          + setIdProduct()
+          + setName()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.StaffEntity {
+          - birthDate : Timestamp
+          - experience : int
+          - firstName : String
+          - idStaff : int
+          - pasNumber : String
+          - secondName : String
+          - thirdName : String
+          + equals()
+          + getBirthDate()
+          + getExperience()
+          + getFirstName()
+          + getIdStaff()
+          + getPasNumber()
+          + getPositionByPositionIdPosition()
+          + getSecondName()
+          + getThirdName()
+          + hashCode()
+          + setBirthDate()
+          + setExperience()
+          + setFirstName()
+          + setIdStaff()
+          + setPasNumber()
+          + setPositionByPositionIdPosition()
+          + setSecondName()
+          + setThirdName()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.TradeareaEntity {
+          - hall : int
+          - idTradeArea : int
+          - name : String
+          + equals()
+          + getHall()
+          + getIdTradeArea()
+          + getName()
+          + getStaffByStaffId()
+          + hashCode()
+          + setHall()
+          + setIdTradeArea()
+          + setName()
+          + setStaffByStaffId()
+          + toString()
+      }
+    }
+
+  
+
+
+    namespace b {
+      class db.TypeofpointEntity {
+          - idTypeOfPoint : int
+          - name : String
+          + equals()
+          + getCharacteristicByCharacteristicId()
+          + getIdTypeOfPoint()
+          + getName()
+          + hashCode()
+          + setCharacteristicByCharacteristicId()
+          + setIdTypeOfPoint()
+          + setName()
+          + toString()
+      }
+    }
+
+  
+
+  db.OrderEntity o-- db.ClientcardEntity : clientcardByClientCardIdClientCard
+  db.StaffEntity o-- db.PositionEntity : positionByPositionIdPosition
+  db.TradeareaEntity o-- db.StaffEntity : staffByStaffId
+  db.TypeofpointEntity o-- db.CharacteristicEntity : Characteristic_id
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
